@@ -1,12 +1,11 @@
 test "file has correct content" {
   config = {
-    source = "../"
+    source = "../main_module"  # now points to a module
   }
 
   assertions {
-    # Check that the local_file content contains "hello terraform"
     output = {
-      value = local_file.example.content
+      value  = local_file.example.content
       equals = "hello terraform"
     }
   }
